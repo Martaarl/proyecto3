@@ -1,0 +1,31 @@
+section{
+    width: 100%;
+    background-color: red;
+}
+
+.bookImages{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.images{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 10px;
+}
+
+img {
+    width: 250px;
+    height: 300px;
+    border-radius: 5%;
+}

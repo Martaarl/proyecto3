@@ -7,7 +7,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #12142f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   --color-background: rgba(249, 249, 249, 0.908);
-  --primary: #111111;
+  --primary: #0e1127;
   --secondary: #cacacaa0;
   --logo: #e60022;
   --transparent: rgba(245, 245, 245, 0.862);
