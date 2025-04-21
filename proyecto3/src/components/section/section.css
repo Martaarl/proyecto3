@@ -1,31 +1,23 @@
 section{
     width: 100%;
-    background-color: red;
+    background-color: var(--color-background);
+    padding-bottom: 50px;
+  
 }
 
 .bookImages{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    gap: 10px;
 }
 
 .images{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-}
+    gap: 5px;
 
-.card{
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    padding: 10px;
-}
-
-img {
-    width: 250px;
-    height: 300px;
-    border-radius: 5%;
 }

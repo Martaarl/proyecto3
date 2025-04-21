@@ -7,7 +7,7 @@ import './header.css';
     const header = document.querySelector('header');
 
     const logo = document.createElement('img');
-    logo.src='/assets/logo.png';
+    logo.src='/assets/image.png';
     logo.alt = 'Logo de la página';
 
     const nav = document.createElement('nav');
@@ -32,12 +32,12 @@ form.id = 'formulary';
 
 const label = document.createElement('label');
 const input = document.createElement('input');
-input.placeholder=' Busca aquí';
+input.placeholder='🔎 Busca aquí';
 
-const button = document.createElement('button');
+/*const button = document.createElement('button');
 button.className = 'buttonLook';
 button.textContent = '🔎';
-button.type = 'submit';
+button.type = 'submit';*/
 
 const menu = document.createElement('div');
 menu.classList.add('menu');
@@ -53,7 +53,7 @@ messageIcon.alt = 'Mensajes';
 menu.append(alertIcon, messageIcon);
 
 
-form.append(label, input, button);
+form.append(label, input )/*button)*/;
 
 nav.append(ul, form);
 
@@ -67,10 +67,10 @@ form.addEventListener('keydown', async(e) =>{
   }
 });
 
-button.addEventListener('click', () => {
+/*button.addEventListener('click', () => {
   printImages(input.value);
   input.value = '';
-})
+})*/
 
 return 
 } ;
