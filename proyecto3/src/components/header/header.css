@@ -51,7 +51,7 @@ header{
   display: flex;
 }
 
- li>a:hover {
+ .check>a:hover {
   transition: 1;
   transform: scale(1.1);
   color: red;
@@ -92,9 +92,9 @@ header{
 }
  };
 
- @media (max-width: 366px){
-  .menu>img{
+ @media (max-width: 350px){
+  .menu{
     display: none;
     background-color: red;
   }
- }
+ };

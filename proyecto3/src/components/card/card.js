@@ -20,7 +20,7 @@ export const Card = (imageData)=>{
     likes.className = 'numberLikes';
 
     const visit = document.createElement('a');
-    visit.src='#';
+    visit.src= `${imageData.user.links.html} `;
     visit.className = 'anchorVisit';
     visit.textContent = 'Visitar';
 
