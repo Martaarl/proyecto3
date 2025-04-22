@@ -13,4 +13,3 @@ document.addEventListener('DOMContentLoaded', ()=>{
     paintFooter();
 });
 
-/*const url = 'https://api.unsplash.com/search/photos';*/

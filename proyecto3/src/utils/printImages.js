@@ -3,7 +3,9 @@ import {Card} from '../components/card/card'
 import { fetchApi } from "./fetchApi";
 
 export default  async function printImages(query, page = 1, perPage=10) {
+    
     const imagesContainer = document.querySelector('.images');
+    
     const pagination = document.querySelector('.pagination');
 
     if (imagesContainer) imagesContainer.innerHTML = '';
@@ -14,7 +16,7 @@ export default  async function printImages(query, page = 1, perPage=10) {
         const response =result.results;
         const total_pages= result.total_pages;
 
-    if(response.lenght === 0){
+        if(response.length === 0){
             const suggest = document.createElement('p');
             suggest.className = 'suggestMessage';
             suggest.textContent = `No encontramos resultados para "${query}". Prueba a buscar otra palabra como 'perro'`;
