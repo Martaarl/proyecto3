@@ -6,6 +6,8 @@ import { paintFooter } from './components/footer/footer.js';
 
 let currentQuery = 'libros';
 
+const lastQuery = localStorage.getItem('ultimaBusqueda');
+
 document.addEventListener('DOMContentLoaded', ()=>{
     paintHeader();
     paintSection();
@@ -13,4 +15,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
     paintFooter();
 });
 
-/*const url = 'https://api.unsplash.com/search/photos';*/
+
+

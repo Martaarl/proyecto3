@@ -12,6 +12,8 @@
     transition: 0.5;
 }
 .bookImage {
+    display: flex;
+    flex-direction: column;
     width: 90%;
     height: 400px;
     border-radius: 5%;

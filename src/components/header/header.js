@@ -27,9 +27,16 @@ let currentQuery = 'libros';
          a.textContent = anchor;
 
          if (anchor === 'Inicio'){
-          a.addEventListener('click', (e) =>{
+          a.addEventListener('click', async (e) =>{
             e.preventDefault();
-            location.reload();
+            const firstLook = localStorage.getItem('primeraBusqueda');
+            
+            if (firstLook){
+              input.value = firstLook;
+              currentQuery = firstLook;
+               await printImages(firstLook);
+          }
+          
           });
         }
 
@@ -69,6 +76,10 @@ form.addEventListener('keydown', async(e) =>{
   if (e.key==='Enter') {
     e.preventDefault();
      currentQuery = input.value;
+
+     if (!localStorage.getItem('primeraBusqueda')) {
+      localStorage.setItem('primeraBusqueda', input.value)
+     }
      await printImages(input.value);
      input.value = '';
   } 

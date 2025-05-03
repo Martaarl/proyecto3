@@ -3,8 +3,8 @@ import {Card} from '../components/card/card'
 import { fetchApi } from "./fetchApi";
 
 export default  async function printImages(query, page = 1, perPage=10) {
+    
     const imagesContainer = document.querySelector('.images');
-    const pagination = document.querySelector('.pagination');
 
     if (imagesContainer) imagesContainer.innerHTML = '';
 
@@ -12,15 +12,25 @@ export default  async function printImages(query, page = 1, perPage=10) {
         const result = await fetchApi(query, page, perPage);
 
         const response =result.results;
+        
         const total_pages= result.total_pages;
 
-    if(response.lenght === 0){
+        if(response.length === 0){
+           
             const suggest = document.createElement('p');
             suggest.className = 'suggestMessage';
             suggest.textContent = `No encontramos resultados para "${query}". Prueba a buscar otra palabra como 'perro'`;
             imagesContainer.appendChild(suggest);
+
+            const imagesSuggested = await fetchApi('perro', page = 1, perPage=10)
+            imagesSuggested.results.forEach(image=>{
+                const newCard = Card(image);
+                imagesContainer.appendChild(newCard);
+            });
+      
+            displayPagination(page, imagesSuggested.total_pages);
             return;
-        }
+            }
 
         response.forEach(image => {
             const newCard = Card(image);
@@ -56,11 +66,11 @@ function displayPagination(currentPage, totalPages){
     pagination.appendChild(nextButton);
 };
 
+
 let currentQuery = 'libros';
 
 function pageChange(newPage){
     const query = document.querySelector('input').value;
-    printImages(currentQuery, newPage, 10);
-
+    printImages(query, newPage, 10);
     return 
 }
