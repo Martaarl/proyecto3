@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #12142f;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-background: rgba(249, 249, 249, 0.908);
+  --primary: #0e1127;
+  --secondary: #cacacaa0;
+  --logo: #e60022;
+  --transparent: rgba(245, 245, 245, 0.862);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+
+body {
+  background-color: var(--color-background);
+  color: var(--primary);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  height: auto;
+  font-family: "Roboto", sans-serif; 
+  min-width: 334px;
+}
+
