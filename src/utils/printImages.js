@@ -8,6 +8,8 @@ export default  async function printImages(query, page = 1, perPage=10) {
 
     if (imagesContainer) imagesContainer.innerHTML = '';
 
+    currentQuery = query|| currentQuery;
+
     try {
         const result = await fetchApi(query, page, perPage);
 
@@ -70,7 +72,7 @@ function displayPagination(currentPage, totalPages){
 let currentQuery = 'libros';
 
 function pageChange(newPage){
-    const query = document.querySelector('input').value;
-    printImages(query, newPage, 10);
+    /*const query = document.querySelector('input').value;*/
+    printImages(currentQuery, newPage, 10);
     return 
 }

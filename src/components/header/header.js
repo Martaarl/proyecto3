@@ -44,7 +44,6 @@ let currentQuery = 'libros';
          ul.appendChild(li);
       });
 
-      let currentQuery = 'libros';
 
 const form = document.createElement('form');
 form.id = 'formulary';
@@ -80,7 +79,7 @@ form.addEventListener('keydown', async(e) =>{
      if (!localStorage.getItem('primeraBusqueda')) {
       localStorage.setItem('primeraBusqueda', input.value)
      }
-     await printImages(input.value);
+     await printImages(currentQuery, 1, 10);
      input.value = '';
   } 
 });
