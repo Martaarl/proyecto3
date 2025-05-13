@@ -29,12 +29,17 @@ let currentQuery = 'libros';
          if (anchor === 'Inicio'){
           a.addEventListener('click', async (e) =>{
             e.preventDefault();
+            
             const firstLook = localStorage.getItem('primeraBusqueda');
             
             if (firstLook){
               input.value = firstLook;
               currentQuery = firstLook;
-               await printImages(firstLook);
+              await printImages(firstLook, 1, 10);
+
+              localStorage.removeItem('primeraBusqueda');
+          } else {
+            alert('Aun no has realizado ninguna búsqueda')
           }
           
           });
@@ -74,12 +79,14 @@ header.append(logo, nav, menu);
 form.addEventListener('keydown', async(e) =>{
   if (e.key==='Enter') {
     e.preventDefault();
+
      currentQuery = input.value;
 
      if (!localStorage.getItem('primeraBusqueda')) {
       localStorage.setItem('primeraBusqueda', input.value)
-     }
-     await printImages(currentQuery, 1, 10);
+      console.log('primera:', input.value)
+    }
+     await printImages(input.value);
      input.value = '';
   } 
 });
